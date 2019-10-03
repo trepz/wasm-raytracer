@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <h2>wasm raytracer</h2>
     <div class="canvas-container">
-      <canvas width="300" height="200" ref="canvas"></canvas>
+      <canvas width="800" height="600" ref="canvas"></canvas>
     </div>
   </div>
 </template>
@@ -18,7 +17,7 @@ export default class App extends Vue {
     const c = <HTMLCanvasElement>this.$refs["canvas"];
     const ctx = c.getContext("2d");
 
-    wasm.render(ctx, 300, 200);
+    wasm.render(ctx, 800, 600);
   }
 }
 </script>
