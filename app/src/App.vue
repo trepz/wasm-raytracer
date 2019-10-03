@@ -17,15 +17,8 @@ export default class App extends Vue {
 
     const c = <HTMLCanvasElement>this.$refs["canvas"];
     const ctx = c.getContext("2d");
-    const imgData = ctx.createImageData(300, 200);
-    let i;
-    for (i = 0; i < imgData.data.length; i += 4) {
-      imgData.data[i+0] = 255;
-      imgData.data[i+1] = 0;
-      imgData.data[i+2] = 0;
-      imgData.data[i+3] = 255 - (i / 800);
-    }
-    ctx.putImageData(imgData, 0, 0);
+
+    wasm.render(ctx, 300, 200);
   }
 }
 </script>
